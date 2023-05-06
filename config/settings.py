@@ -73,15 +73,18 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-key_p = os.getenv('PostgreSQL_Key')
-print (key_p)
+PSQL_Key :str = os.getenv('PostgreSQL_Key')
+
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'project',
-        'USER': 'postqres',
-        'PASSWORD': key_p,
-    }
+        'USER': 'postgres',
+        'PASSWORD': PSQL_Key,
+        'HOST': '127.0.0.1',
+        'PORT': '5432'
+                    }
 }
 
 
