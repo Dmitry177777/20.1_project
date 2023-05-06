@@ -9,7 +9,7 @@ class Product(models.Model):
     product_price = models.IntegerField(verbose_name='Цена за покупку')
     date_of_creation = models.DateField(max_length=150, verbose_name='Дата создания')
     date_of_change = models.DateField(max_length=150, verbose_name='Дата последнего изменения')
-    created_at = models.DateTimeField (verbose_name='Время создания', **NULLABLE)
+
     def __str__(self):
         return f'{self.product_name} {self.description} {self.product_image} {self.product_category} {self.product_price} {self.date_of_creation} {self.date_of_change}'
 
