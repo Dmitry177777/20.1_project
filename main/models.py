@@ -6,7 +6,7 @@ class Product(models.Model):
     description = models.CharField(max_length=150, verbose_name='Описание')
     product_image = models.ImageField(upload_to='product_image/', verbose_name='Изображение', **NULLABLE)
     product_category = models.ForeignKey('Category', on_delete=models.CASCADE,)
-    product_price = models.IntegerField(max_length=150, verbose_name='Цена за покупку')
+    product_price = models.IntegerField(verbose_name='Цена за покупку')
     date_of_creation = models.DateField(max_length=150, verbose_name='Дата создания')
     date_of_change = models.DateField(max_length=150, verbose_name='Дата последнего изменения')
 
