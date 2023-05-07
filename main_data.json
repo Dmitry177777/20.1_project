@@ -1,0 +1,74 @@
+[
+  {
+    "model": "main.category",
+    "pk": 4,
+    "fields": {
+      "product_category": "Посуда",
+      "description": "Тарелки, кружки и т.п.",
+      "is_active": true
+    }
+  },
+  {
+    "model": "main.category",
+    "pk": 5,
+    "fields": {
+      "product_category": "Сковородки",
+      "description": "Сковородки блинные, wok, сотейники",
+      "is_active": true
+    }
+  },
+  {
+    "model": "main.category",
+    "pk": 6,
+    "fields": {
+      "product_category": "Кастрюли",
+      "description": "Кострюли, наборы кастрюль",
+      "is_active": true
+    }
+  },
+  {
+    "model": "main.category",
+    "pk": 7,
+    "fields": {
+      "product_category": "Товары для обуви, одежды",
+      "description": "Аксесуары для обуви и одежды ",
+      "is_active": true
+    }
+  },
+  {
+    "model": "main.category",
+    "pk": 8,
+    "fields": {
+      "product_category": "Ручки, замки и фурнитура",
+      "description": "Фурнитура",
+      "is_active": true
+    }
+  },
+  {
+    "model": "main.category",
+    "pk": 9,
+    "fields": {
+      "product_category": "Авторские товары ручной работы",
+      "description": "Ручная работа",
+      "is_active": true
+    }
+  },
+  {
+    "model": "main.category",
+    "pk": 10,
+    "fields": {
+      "product_category": "Умный дом",
+      "description": "Аксесуары для умного дома",
+      "is_active": true
+    }
+  },
+  {
+    "model": "main.category",
+    "pk": 11,
+    "fields": {
+      "product_category": "Товар для ухода за животными",
+      "description": "Коврики,перенорски, игрушки для животных",
+      "is_active": true
+    }
+  }
+]
