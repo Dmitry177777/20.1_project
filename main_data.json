@@ -1,73 +1,291 @@
 [
   {
-    "model": "main.category",
-    "pk": 4,
+    "model": "main.product",
+    "pk": 42,
     "fields": {
-      "product_category": "РџРѕСЃСѓРґР°",
-      "description": "РўР°СЂРµР»РєРё, РєСЂСѓР¶РєРё Рё С‚.Рї.",
+      "product_name": "Тетрадь 20 стр.",
+      "description": "тетрадки",
+      "product_image": "",
+      "product_category": 257,
+      "product_price": null,
+      "date_of_creation": "2023-05-07",
+      "date_of_change": "2023-05-07",
+      "is_active": true
+    }
+  },
+  {
+    "model": "main.product",
+    "pk": 43,
+    "fields": {
+      "product_name": "Журнал",
+      "description": "Журналы",
+      "product_image": "",
+      "product_category": 258,
+      "product_price": null,
+      "date_of_creation": "2023-05-07",
+      "date_of_change": "2023-05-07",
+      "is_active": false
+    }
+  },
+  {
+    "model": "main.product",
+    "pk": 44,
+    "fields": {
+      "product_name": "Книга о войне",
+      "description": "Книги",
+      "product_image": "",
+      "product_category": 258,
+      "product_price": null,
+      "date_of_creation": "2023-05-07",
+      "date_of_change": "2023-05-07",
+      "is_active": true
+    }
+  },
+  {
+    "model": "main.product",
+    "pk": 45,
+    "fields": {
+      "product_name": "Книга о любви",
+      "description": "Книги",
+      "product_image": "",
+      "product_category": 258,
+      "product_price": null,
+      "date_of_creation": "2023-05-07",
+      "date_of_change": "2023-05-07",
+      "is_active": true
+    }
+  },
+  {
+    "model": "main.product",
+    "pk": 46,
+    "fields": {
+      "product_name": "умная розетка",
+      "description": "розетки электрические",
+      "product_image": "",
+      "product_category": 254,
+      "product_price": null,
+      "date_of_creation": "2023-05-07",
+      "date_of_change": "2023-05-07",
+      "is_active": true
+    }
+  },
+  {
+    "model": "main.product",
+    "pk": 47,
+    "fields": {
+      "product_name": "умная лампочка",
+      "description": "лампочки",
+      "product_image": "",
+      "product_category": 254,
+      "product_price": null,
+      "date_of_creation": "2023-05-07",
+      "date_of_change": "2023-05-07",
+      "is_active": true
+    }
+  },
+  {
+    "model": "main.product",
+    "pk": 48,
+    "fields": {
+      "product_name": "умная колонка",
+      "description": "колонки",
+      "product_image": "",
+      "product_category": 254,
+      "product_price": null,
+      "date_of_creation": "2023-05-07",
+      "date_of_change": "2023-05-07",
+      "is_active": true
+    }
+  },
+  {
+    "model": "main.product",
+    "pk": 49,
+    "fields": {
+      "product_name": "умная лампочка рев.2",
+      "description": "лампочки",
+      "product_image": "",
+      "product_category": 254,
+      "product_price": null,
+      "date_of_creation": "2023-05-07",
+      "date_of_change": "2023-05-07",
+      "is_active": true
+    }
+  },
+  {
+    "model": "main.product",
+    "pk": 50,
+    "fields": {
+      "product_name": "умная лампочка рев.3",
+      "description": "лампочки",
+      "product_image": "",
+      "product_category": 254,
+      "product_price": null,
+      "date_of_creation": "2023-05-07",
+      "date_of_change": "2023-05-07",
+      "is_active": true
+    }
+  },
+  {
+    "model": "main.product",
+    "pk": 51,
+    "fields": {
+      "product_name": "Мемуары маршала Жукова",
+      "description": "Книги",
+      "product_image": "",
+      "product_category": 258,
+      "product_price": null,
+      "date_of_creation": "2023-05-07",
+      "date_of_change": "2023-05-07",
+      "is_active": true
+    }
+  },
+  {
+    "model": "main.product",
+    "pk": 52,
+    "fields": {
+      "product_name": "Сковорода Tefal",
+      "description": "Tefal",
+      "product_image": "",
+      "product_category": 249,
+      "product_price": null,
+      "date_of_creation": "2023-05-07",
+      "date_of_change": "2023-05-07",
+      "is_active": true
+    }
+  },
+  {
+    "model": "main.product",
+    "pk": 53,
+    "fields": {
+      "product_name": "Сковорода Bork",
+      "description": "Bork",
+      "product_image": "",
+      "product_category": 249,
+      "product_price": null,
+      "date_of_creation": "2023-05-07",
+      "date_of_change": "2023-05-07",
+      "is_active": true
+    }
+  },
+  {
+    "model": "main.product",
+    "pk": 54,
+    "fields": {
+      "product_name": "Сковорода Russo",
+      "description": "Russo",
+      "product_image": "",
+      "product_category": 249,
+      "product_price": null,
+      "date_of_creation": "2023-05-07",
+      "date_of_change": "2023-05-07",
       "is_active": true
     }
   },
   {
     "model": "main.category",
-    "pk": 5,
+    "pk": 248,
     "fields": {
-      "product_category": "РЎРєРѕРІРѕСЂРѕРґРєРё",
-      "description": "РЎРєРѕРІРѕСЂРѕРґРєРё Р±Р»РёРЅРЅС‹Рµ, wok, СЃРѕС‚РµР№РЅРёРєРё",
+      "product_category": "Посуда",
+      "description": "Тарелки, кружки и т.п.",
       "is_active": true
     }
   },
   {
     "model": "main.category",
-    "pk": 6,
+    "pk": 249,
     "fields": {
-      "product_category": "РљР°СЃС‚СЂСЋР»Рё",
-      "description": "РљР°СЃС‚СЂСЋР»Рё, РЅР°Р±РѕСЂС‹ РєР°СЃС‚СЂСЋР»СЊ",
+      "product_category": "Сковородки",
+      "description": "Сковородки блинные, wok, сотейники",
       "is_active": true
     }
   },
   {
     "model": "main.category",
-    "pk": 7,
+    "pk": 250,
     "fields": {
-      "product_category": "РўРѕРІР°СЂС‹ РґР»СЏ РѕР±СѓРІРё, РѕРґРµР¶РґС‹",
-      "description": "РђРєСЃРµСЃСѓР°СЂС‹ РґР»СЏ РѕР±СѓРІРё Рё РѕРґРµР¶РґС‹ ",
+      "product_category": "Кастрюли",
+      "description": "Кастрюли, наборы кастрюль",
       "is_active": true
     }
   },
   {
     "model": "main.category",
-    "pk": 8,
+    "pk": 251,
     "fields": {
-      "product_category": "Р СѓС‡РєРё, Р·Р°РјРєРё Рё С„СѓСЂРЅРёС‚СѓСЂР°",
-      "description": "Р¤СѓСЂРЅРёС‚СѓСЂР°",
+      "product_category": "Товары для обуви, одежды",
+      "description": "Аксесуары для обуви и одежды",
       "is_active": true
     }
   },
   {
     "model": "main.category",
-    "pk": 9,
+    "pk": 252,
     "fields": {
-      "product_category": "РђРІС‚РѕСЂСЃРєРёРµ С‚РѕРІР°СЂС‹ СЂСѓС‡РЅРѕР№ СЂР°Р±РѕС‚С‹",
-      "description": "Р СѓС‡РЅР°СЏ СЂР°Р±РѕС‚Р°",
+      "product_category": "Фурнитура",
+      "description": "Ручки, замки и фурнитура",
       "is_active": true
     }
   },
   {
     "model": "main.category",
-    "pk": 10,
+    "pk": 253,
     "fields": {
-      "product_category": "РЈРјРЅС‹Р№ РґРѕРј",
-      "description": "РђРєСЃРµСЃСѓР°СЂС‹ РґР»СЏ СѓРјРЅРѕРіРѕ РґРѕРјР°",
+      "product_category": "Ручная работа",
+      "description": "Авторские товары ручной работы",
       "is_active": true
     }
   },
   {
     "model": "main.category",
-    "pk": 11,
+    "pk": 254,
     "fields": {
-      "product_category": "РўРѕРІР°СЂ РґР»СЏ СѓС…РѕРґР° Р·Р° Р¶РёРІРѕС‚РЅС‹РјРё",
-      "description": "РљРѕРІСЂРёРєРё,РїРµСЂРµРЅРѕСЂСЃРєРё, РёРіСЂСѓС€РєРё РґР»СЏ Р¶РёРІРѕС‚РЅС‹С…",
+      "product_category": "Умный дом",
+      "description": "Аксесуары для умного дома",
+      "is_active": true
+    }
+  },
+  {
+    "model": "main.category",
+    "pk": 255,
+    "fields": {
+      "product_category": "Товар для ухода за животными",
+      "description": "Коврики,перенорски, игрушки для животных",
+      "is_active": false
+    }
+  },
+  {
+    "model": "main.category",
+    "pk": 256,
+    "fields": {
+      "product_category": "Инструменты ручные",
+      "description": "Пассатижи, отвертки, клещи",
+      "is_active": true
+    }
+  },
+  {
+    "model": "main.category",
+    "pk": 257,
+    "fields": {
+      "product_category": "Письменные принаджежности",
+      "description": "тетрадки, блокноты, бумага",
+      "is_active": true
+    }
+  },
+  {
+    "model": "main.category",
+    "pk": 258,
+    "fields": {
+      "product_category": "Печатная продукция",
+      "description": "Журналы, газеты, книги, энциклопедии",
+      "is_active": false
+    }
+  },
+  {
+    "model": "main.category",
+    "pk": 259,
+    "fields": {
+      "product_category": "Электронные издания",
+      "description": "Художественная литература, Проза, Журналистика, Историчесские эссе",
       "is_active": true
     }
   }
