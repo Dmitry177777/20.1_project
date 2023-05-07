@@ -22,7 +22,7 @@
     "pk": 6,
     "fields": {
       "product_category": "Кастрюли",
-      "description": "Кострюли, наборы кастрюль",
+      "description": "Кастрюли, наборы кастрюль",
       "is_active": true
     }
   },

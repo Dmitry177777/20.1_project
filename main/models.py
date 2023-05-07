@@ -1,3 +1,5 @@
+from datetime import date
+
 from django.db import models
 
 NULLABLE = {'blank':True, 'null': True}
@@ -6,9 +8,9 @@ class Product(models.Model):
     description = models.CharField(max_length=150, verbose_name='Описание')
     product_image = models.ImageField(upload_to='product_image/', verbose_name='Изображение', **NULLABLE)
     product_category = models.ForeignKey('Category', on_delete=models.CASCADE, verbose_name='Категория')
-    product_price = models.IntegerField(verbose_name='Цена за покупку')
-    date_of_creation = models.DateField(max_length=150, verbose_name='Дата создания')
-    date_of_change = models.DateField(max_length=150, verbose_name='Дата последнего изменения')
+    product_price = models.IntegerField(default=None,verbose_name='Цена за покупку', **NULLABLE)
+    date_of_creation = models.DateField(default=date.today, verbose_name='Дата создания')
+    date_of_change = models.DateField(default=date.today, verbose_name='Дата последнего изменения')
     is_active = models.BooleanField(default=True, verbose_name='Есть на складе')
     def __str__(self):
         return f'{self.product_name} : {self.description} : {self.product_image} {self.product_category} {self.product_price} {self.date_of_creation} {self.date_of_change}'
