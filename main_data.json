@@ -3,8 +3,8 @@
     "model": "main.category",
     "pk": 4,
     "fields": {
-      "product_category": "Посуда",
-      "description": "Тарелки, кружки и т.п.",
+      "product_category": "РџРѕСЃСѓРґР°",
+      "description": "РўР°СЂРµР»РєРё, РєСЂСѓР¶РєРё Рё С‚.Рї.",
       "is_active": true
     }
   },
@@ -12,8 +12,8 @@
     "model": "main.category",
     "pk": 5,
     "fields": {
-      "product_category": "Сковородки",
-      "description": "Сковородки блинные, wok, сотейники",
+      "product_category": "РЎРєРѕРІРѕСЂРѕРґРєРё",
+      "description": "РЎРєРѕРІРѕСЂРѕРґРєРё Р±Р»РёРЅРЅС‹Рµ, wok, СЃРѕС‚РµР№РЅРёРєРё",
       "is_active": true
     }
   },
@@ -21,8 +21,8 @@
     "model": "main.category",
     "pk": 6,
     "fields": {
-      "product_category": "Кастрюли",
-      "description": "Кострюли, наборы кастрюль",
+      "product_category": "РљР°СЃС‚СЂСЋР»Рё",
+      "description": "РљРѕСЃС‚СЂСЋР»Рё, РЅР°Р±РѕСЂС‹ РєР°СЃС‚СЂСЋР»СЊ",
       "is_active": true
     }
   },
@@ -30,8 +30,8 @@
     "model": "main.category",
     "pk": 7,
     "fields": {
-      "product_category": "Товары для обуви, одежды",
-      "description": "Аксесуары для обуви и одежды ",
+      "product_category": "РўРѕРІР°СЂС‹ РґР»СЏ РѕР±СѓРІРё, РѕРґРµР¶РґС‹",
+      "description": "РђРєСЃРµСЃСѓР°СЂС‹ РґР»СЏ РѕР±СѓРІРё Рё РѕРґРµР¶РґС‹ ",
       "is_active": true
     }
   },
@@ -39,8 +39,8 @@
     "model": "main.category",
     "pk": 8,
     "fields": {
-      "product_category": "Ручки, замки и фурнитура",
-      "description": "Фурнитура",
+      "product_category": "Р СѓС‡РєРё, Р·Р°РјРєРё Рё С„СѓСЂРЅРёС‚СѓСЂР°",
+      "description": "Р¤СѓСЂРЅРёС‚СѓСЂР°",
       "is_active": true
     }
   },
@@ -48,8 +48,8 @@
     "model": "main.category",
     "pk": 9,
     "fields": {
-      "product_category": "Авторские товары ручной работы",
-      "description": "Ручная работа",
+      "product_category": "РђРІС‚РѕСЂСЃРєРёРµ С‚РѕРІР°СЂС‹ СЂСѓС‡РЅРѕР№ СЂР°Р±РѕС‚С‹",
+      "description": "Р СѓС‡РЅР°СЏ СЂР°Р±РѕС‚Р°",
       "is_active": true
     }
   },
@@ -57,8 +57,8 @@
     "model": "main.category",
     "pk": 10,
     "fields": {
-      "product_category": "Умный дом",
-      "description": "Аксесуары для умного дома",
+      "product_category": "РЈРјРЅС‹Р№ РґРѕРј",
+      "description": "РђРєСЃРµСЃСѓР°СЂС‹ РґР»СЏ СѓРјРЅРѕРіРѕ РґРѕРјР°",
       "is_active": true
     }
   },
@@ -66,8 +66,8 @@
     "model": "main.category",
     "pk": 11,
     "fields": {
-      "product_category": "Товар для ухода за животными",
-      "description": "Коврики,перенорски, игрушки для животных",
+      "product_category": "РўРѕРІР°СЂ РґР»СЏ СѓС…РѕРґР° Р·Р° Р¶РёРІРѕС‚РЅС‹РјРё",
+      "description": "РљРѕРІСЂРёРєРё,РїРµСЂРµРЅРѕСЂСЃРєРё, РёРіСЂСѓС€РєРё РґР»СЏ Р¶РёРІРѕС‚РЅС‹С…",
       "is_active": true
     }
   }
