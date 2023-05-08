@@ -4,6 +4,7 @@ from django.db import models
 
 NULLABLE = {'blank':True, 'null': True}
 class Product(models.Model):
+
     product_name = models.CharField(max_length=150, verbose_name='Наименование')
     description = models.CharField(max_length=150, verbose_name='Описание')
     product_image = models.ImageField(upload_to='product_image/', verbose_name='Изображение', **NULLABLE)

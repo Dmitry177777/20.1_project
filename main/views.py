@@ -1,17 +1,22 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 
-from main.models import Product
+from main.models import Product, Category
 
 
 # Create your views here.
 def index(request):
-    return render(request, 'main/index.html')
+    context = {
+        'object_list': Category.objects.all()[:3],
+        'title': 'Список категорий'
+    }
+    return render(request, 'main/index.html', context=context)
 
 
 def products(request):
    context={
-       'object_list': Product.objects.all()
+       'object_list': Product.objects.all(),
+       'title': 'Список продуктов'
    }
 
    return render(request, 'main/products.html', context=context)
