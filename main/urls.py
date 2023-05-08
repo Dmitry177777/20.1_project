@@ -8,5 +8,6 @@ app_name = MainConfig.name
 urlpatterns = [
     path('', index, name="index"),
     path('products/', products, name='products'),
+    path('category/', category, name='category'),
     path('product_card/<int:pk>/', product_card, name='product_card'),
 ]
