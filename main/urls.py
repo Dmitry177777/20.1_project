@@ -9,9 +9,9 @@ app_name = MainConfig.name
 
 urlpatterns = [
     path('', index, name="index"),
-    path('products/', products, name='products'),
-    path('category/', category, name='category'),
-    path('product_detail/<int:pk>/', product_detail, name='product_detail'),
+    path('products/', ProductListView.as_view(), name='products'),
+    path('category/', CategoryListView.as_view(), name='category'),
+    path('product_detail/<int:pk>/', ProductDetailView.as_view(), name='product_detail'),
 ]
 
 # if settings.DEBUG:
