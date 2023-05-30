@@ -2,7 +2,8 @@ import random
 
 from django.http import HttpResponse
 from django.shortcuts import render
-from django.views.generic import ListView, DetailView
+from django.urls import reverse_lazy
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 
 from main.models import Product, Category
 
@@ -27,6 +28,14 @@ class ProductListView(ListView):
         'title': 'Список продуктов'
     }
 
+# Метод переопределяет представление и выводит только продукты с атрибутом is_active=True)
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        queryset = queryset.filter(is_active=True)
+        return queryset
+
+
+
 # def products(request):
 #     context = {
 #         'object_list': Product.objects.all(),
@@ -39,6 +48,9 @@ class CategoryListView(ListView):
     extra_context = {
         'title': 'Список категорий'
     }
+
+
+
 
 # def category(request):
 #     context = {
@@ -68,6 +80,19 @@ class ProductDetailView(DetailView):
 #     return render(request, 'main/product_detail.html', context=context)
 
 
+class ProductCreateView(CreateView):
+    model=Product
+    fields = ('product_category', 'product_name', 'description', 'product_price',)
+    success_url = reverse_lazy('main:product_list')
+
+class ProductUpdateView(UpdateView):
+    model=Product
+    fields = ('product_category', 'product_name', 'description', 'product_price',)
+    success_url = reverse_lazy('main:product_list')
+
+class ProductDeleteView (DeleteView ):
+    model=Product
+    success_url = reverse_lazy('main:product_list')
 
 
 # def product_card(request):

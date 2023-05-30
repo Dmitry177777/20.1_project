@@ -13,7 +13,9 @@
 
         <h2 class="fw-normal">{{object.product_name|title}}</h2>
         <p>{{object.description|truncatechars:100|title }}</p>
-        <p><a class="btn btn-secondary" href="{% url 'main:product_detail' object.pk %}">Посмотреть &raquo;</a></p>
+        <p><a class="btn btn-secondary" href="{% url 'main:product_item' object.pk %}">Посмотреть &raquo;</a></p>
+        <p><a class="btn btn-warning" href="{% url 'main:product_update' object.pk %}">Обновить &raquo;</a></p>
+        <p><a class="btn btn-danger" href="{% url 'main:product_delete' object.pk %}">Удалить &raquo;</a></p>
 
 </div><!-- /.card-body -->
 

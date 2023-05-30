@@ -16,6 +16,13 @@ class Product(models.Model):
     def __str__(self):
         return f'{self.product_name} : {self.description} : {self.product_image} {self.product_category} {self.product_price} {self.date_of_creation} {self.date_of_change}'
 
+
+# функция переопределяет удаление и не удаляет объект а переводит флаг is_active = False
+    def delete(self, *args, **kwargs):
+        self.is_active = False
+        self.save()
+
+
     class Meta:
         verbose_name='продукция'
         verbose_name_plural='продукции'

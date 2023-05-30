@@ -6,6 +6,12 @@
             <h1 class="display-4">{{title|title}}</h1>
     </div>
 
+    <diov class="col-12">
+        <div class="card-footer">
+            <a href="{% url 'main:product_create' %}" class = "btn btn-primary"> Создать продукт</a>
+        </div><!-- /.card-footer -->
+    </diov>
+
 {% for object in object_list %}
 
     <div class="col-lg-4">

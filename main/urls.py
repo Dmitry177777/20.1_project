@@ -9,9 +9,13 @@ app_name = MainConfig.name
 
 urlpatterns = [
     path('', index, name="index"),
-    path('products/', ProductListView.as_view(), name='products'),
-    path('category/', CategoryListView.as_view(), name='category'),
-    path('product_detail/<int:pk>/', ProductDetailView.as_view(), name='product_detail'),
+    path('products/', ProductListView.as_view(), name='product_list'),
+    path('category/', CategoryListView.as_view(), name='category_list'),
+    path('product_item/<int:pk>/', ProductDetailView.as_view(), name='product_item'),
+    path('products/create/', ProductCreateView.as_view(), name='product_create'),
+    path('products/update/<int:pk>/', ProductUpdateView.as_view(), name='product_update'),
+    path('products/delete/<int:pk>/', ProductDeleteView.as_view(), name='product_delete'),
+
 ]
 
 # if settings.DEBUG:
