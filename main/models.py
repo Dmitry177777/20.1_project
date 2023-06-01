@@ -13,6 +13,7 @@ class Product(models.Model):
     date_of_creation = models.DateField(default=date.today, verbose_name='Дата создания')
     date_of_change = models.DateField(default=date.today, verbose_name='Дата последнего изменения')
     is_active = models.BooleanField(default=True, verbose_name='Есть на складе')
+
     def __str__(self):
         return f'{self.product_name} : {self.description} : {self.product_image} {self.product_category} {self.product_price} {self.date_of_creation} {self.date_of_change}'
 
@@ -40,3 +41,44 @@ class Category(models.Model):
         verbose_name='категория'
         verbose_name_plural='категории'
         ordering = ('product_category', )
+
+
+
+class Blog(models.Model):
+    message_slug = models.CharField(max_length=250, verbose_name='Slug')
+    message_heading = models.CharField(max_length=250, verbose_name='Заголовок')
+    message_content= models.TextField(verbose_name='Контент', **NULLABLE)
+    message_preview= models.ImageField(upload_to='message_preview/', verbose_name='Превью', **NULLABLE)
+    date_of_creation = models.DateField(default=date.today, verbose_name='Дата создания')
+    date_of_change = models.DateField(default=date.today, verbose_name='Дата последнего изменения')
+    is_publication = models.BooleanField(default=True, verbose_name='Опубликовано')
+    views_count = models.IntegerField(default=0,verbose_name='Количество просмотров')
+    user_name = models.ForeignKey('Users', on_delete=models.CASCADE, verbose_name='Пользователи')
+
+    def __str__(self):
+        return f'{self.message_heading} : {self.message_slug}'
+
+    # функция переопределяет удаление и не удаляет объект а переводит флаг is_publication = False
+    def delete(self, *args, **kwargs):
+            self.is_publication = False
+            self.save()
+
+    class Meta:
+        verbose_name='Запись блога'
+        verbose_name_plural='Записи блога'
+        ordering = ('message_heading', )
+
+
+class Users(models.Model):
+    user_name = models.CharField(max_length=150, verbose_name='Имя')
+    user_lastname = models.CharField(max_length=150, verbose_name='Отчество')
+    user_surname = models.CharField(max_length=150, verbose_name='Фамилия')
+    user_email = models.EmailField(verbose_name='email', unique=True)
+
+    def __str__(self):
+        return f'{self.user_name} : {self.user_lastname} : {self.user_surname} : {self.user_email}'
+
+    class Meta:
+        verbose_name = 'Пользователь'
+        verbose_name_plural = 'Пользователи'
+        ordering = ('user_name',)
