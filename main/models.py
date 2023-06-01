@@ -1,6 +1,7 @@
 from datetime import date
 
 from django.db import models
+from django.urls import reverse
 
 NULLABLE = {'blank':True, 'null': True}
 class Product(models.Model):
@@ -45,18 +46,24 @@ class Category(models.Model):
 
 
 class Blog(models.Model):
-    message_slug = models.CharField(max_length=250, verbose_name='Slug')
+    slug = models.CharField(max_length=250, verbose_name='Slug')
+    message_preview = models.ImageField(upload_to='message_preview/', verbose_name='Превью', **NULLABLE)
     message_heading = models.CharField(max_length=250, verbose_name='Заголовок')
     message_content= models.TextField(verbose_name='Контент', **NULLABLE)
-    message_preview= models.ImageField(upload_to='message_preview/', verbose_name='Превью', **NULLABLE)
     date_of_creation = models.DateField(default=date.today, verbose_name='Дата создания')
     date_of_change = models.DateField(default=date.today, verbose_name='Дата последнего изменения')
     is_publication = models.BooleanField(default=True, verbose_name='Опубликовано')
     views_count = models.IntegerField(default=0,verbose_name='Количество просмотров')
-    user_name = models.ForeignKey('Users', on_delete=models.CASCADE, verbose_name='Пользователи')
+    # user_name = models.ForeignKey('Users', on_delete=models.CASCADE, verbose_name='Пользователи')
+
+
 
     def __str__(self):
         return f'{self.message_heading} : {self.message_slug}'
+
+    # ункция переопределения slug
+    def get_absolute_url(self):
+        return reverse('blog_item', kwargs={'slug': self.slug})  # new
 
     # функция переопределяет удаление и не удаляет объект а переводит флаг is_publication = False
     def delete(self, *args, **kwargs):
@@ -69,16 +76,16 @@ class Blog(models.Model):
         ordering = ('message_heading', )
 
 
-class Users(models.Model):
-    user_name = models.CharField(max_length=150, verbose_name='Имя')
-    user_lastname = models.CharField(max_length=150, verbose_name='Отчество')
-    user_surname = models.CharField(max_length=150, verbose_name='Фамилия')
-    user_email = models.EmailField(verbose_name='email', unique=True)
-
-    def __str__(self):
-        return f'{self.user_name} : {self.user_lastname} : {self.user_surname} : {self.user_email}'
-
-    class Meta:
-        verbose_name = 'Пользователь'
-        verbose_name_plural = 'Пользователи'
-        ordering = ('user_name',)
+# class Users(models.Model):
+#     user_name = models.CharField(max_length=150, verbose_name='Имя')
+#     user_lastname = models.CharField(max_length=150, verbose_name='Отчество')
+#     user_surname = models.CharField(max_length=150, verbose_name='Фамилия')
+#     user_email = models.EmailField(verbose_name='email', unique=True)
+#
+#     def __str__(self):
+#         return f'{self.user_name} : {self.user_lastname} : {self.user_surname} : {self.user_email}'
+#
+#     class Meta:
+#         verbose_name = 'Пользователь'
+#         verbose_name_plural = 'Пользователи'
+#         ordering = ('user_name',)

@@ -16,7 +16,15 @@ urlpatterns = [
     path('products/update/<int:pk>/', ProductUpdateView.as_view(), name='product_update'),
     path('products/delete/<int:pk>/', ProductDeleteView.as_view(), name='product_delete'),
 
+    path('blog/', BlogListView.as_view(), name='blog_list'),
+
+    path('blog_item/<slug:post_slug>/', BlogDetailView.as_view(), name='blog_item'),
+    path('blog/create/', BlogCreateView.as_view(), name='blog_create'),
+    path('blog/update/<int:pk>/', BlogUpdateView.as_view(), name='blog_update'),
+    path('blog/delete/<int:pk>/', BlogDeleteView.as_view(), name='blog_delete'),
+
 ]
+
 
 # if settings.DEBUG:
 #     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

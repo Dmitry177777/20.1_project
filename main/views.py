@@ -2,10 +2,10 @@ import random
 
 from django.http import HttpResponse
 from django.shortcuts import render
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 
-from main.models import Product, Category
+from main.models import Product, Category, Blog
 
 
 # Create your views here.
@@ -102,3 +102,59 @@ class ProductDeleteView (DeleteView ):
 #         message = request.POST.get('message')
 #         print(f'User {name} with phone {phone}- send message: {message}')
 #     return render(request, 'main/product_detail.html')
+
+class BlogListView(ListView):
+    model=Blog
+    extra_context = {
+        'title': 'Список постов'
+    }
+
+# Метод переопределяет представление и выводит только продукты с атрибутом is_active=True)
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        queryset = queryset.filter(is_publication=True)
+        return queryset
+
+# class UsersListView(ListView):
+#     model=Users
+#     extra_context = {
+#         'title': 'Список пользователей'
+#     }
+
+class BlogDetailView(DetailView):
+    model=Blog
+
+    def get_context_data(self, **kwargs):
+        context_data = super().get_context_data( **kwargs)
+        context_data['title'] = context_data['object'].message_heading
+        return context_data
+
+    # Обновлени счетчика просмотрове
+    def get(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        self.object.views_count += 1
+        self.object.save()
+        context = self.get_context_data(object=self.object)
+        return self.render_to_response(context)
+
+
+
+
+class BlogCreateView(CreateView):
+    model=Blog
+    fields = ('message_heading', 'message_content', 'message_preview', 'is_publication',)
+    success_url = reverse_lazy('main:blog_list')
+
+
+
+class BlogUpdateView(UpdateView):
+    model=Blog
+    fields = ('message_heading', 'message_content', 'message_preview', 'is_publication',)
+
+    # Получаем данные объекта и выводим ту же страницу
+    def get_success_url(self) -> str:
+        return reverse_lazy('main:blog_update', kwargs={'pk': self.object.pk})
+
+class BlogDeleteView (DeleteView ):
+    model=Blog
+    success_url = reverse_lazy('main:blog_list')
