@@ -51,7 +51,6 @@ class CategoryListView(ListView):
 
 
 
-
 # def category(request):
 #     context = {
 #         'object_list': Category.objects.all(),
