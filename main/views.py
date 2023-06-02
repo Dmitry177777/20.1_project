@@ -122,6 +122,7 @@ class BlogListView(ListView):
 
 class BlogDetailView(DetailView):
     model=Blog
+    success_url = reverse_lazy('main:blog_list')
 
     def get_context_data(self, **kwargs):
         context_data = super().get_context_data( **kwargs)
@@ -132,18 +133,20 @@ class BlogDetailView(DetailView):
     def get(self, request, *args, **kwargs):
         self.object = self.get_object()
         self.object.views_count += 1
-        self.object.slug = self.object.get_absolute_url
         self.object.save()
         context = self.get_context_data(object=self.object)
         return self.render_to_response(context)
 
-    def post_detail(request, slug):
-        post = get_object_or_404(Blog, slug=slug)
+
+
 
 class BlogCreateView(CreateView):
     model=Blog
     fields = ('message_heading', 'message_content', 'message_preview', 'is_publication',)
     success_url = reverse_lazy('main:blog_list')
+
+
+
 
 
 

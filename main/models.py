@@ -47,7 +47,7 @@ class Category(models.Model):
 
 
 class Blog(models.Model):
-    slug = models.CharField(default=self.message_heading, max_length=250, verbose_name='Slug')
+    slug = models.CharField(max_length=250, null=False, unique=True, verbose_name='slug')
     message_preview = models.ImageField(upload_to='message_preview/', verbose_name='Превью', **NULLABLE)
     message_heading = models.CharField(max_length=250, verbose_name='Заголовок')
     message_content= models.TextField(verbose_name='Контент', **NULLABLE)
@@ -55,21 +55,26 @@ class Blog(models.Model):
     date_of_change = models.DateField(default=date.today, verbose_name='Дата последнего изменения')
     is_publication = models.BooleanField(default=True, verbose_name='Опубликовано')
     views_count = models.IntegerField(default=0,verbose_name='Количество просмотров')
-    # user_name = models.ForeignKey('Users', on_delete=models.CASCADE, verbose_name='Пользователи')
+    user_name = models.CharField(max_length=250,  **NULLABLE, verbose_name='Пользователи')
 
 
 
     def __str__(self):
         return f'{self.message_heading} : {self.message_content}'
 
-    def save(self, *args, **kwargs):
-        self.slug = slugify(self.message_heading)
-        super(Blog, self).save(*args, **kwargs)
-
-
-    # функция переопределения slug
+        # функция переопределения slug
     def get_absolute_url(self):
         return reverse('blog_item', kwargs={'slug': self.slug})  # new
+
+
+    def save(self, *args, **kwargs):  # new
+        if not self.slug:
+            self.slug = slugify(self.message_heading)
+            self.save()
+        return super().save(*args, **kwargs)
+
+
+
 
     # функция переопределяет удаление и не удаляет объект а переводит флаг is_publication = False
     def delete(self, *args, **kwargs):
