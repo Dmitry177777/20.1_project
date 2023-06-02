@@ -2,6 +2,7 @@ from datetime import date
 
 from django.db import models
 from django.urls import reverse
+from django.utils.text import slugify
 
 NULLABLE = {'blank':True, 'null': True}
 class Product(models.Model):
@@ -46,7 +47,7 @@ class Category(models.Model):
 
 
 class Blog(models.Model):
-    slug = models.CharField(max_length=250, verbose_name='Slug')
+    slug = models.CharField(default=self.message_heading, max_length=250, verbose_name='Slug')
     message_preview = models.ImageField(upload_to='message_preview/', verbose_name='Превью', **NULLABLE)
     message_heading = models.CharField(max_length=250, verbose_name='Заголовок')
     message_content= models.TextField(verbose_name='Контент', **NULLABLE)
@@ -59,9 +60,14 @@ class Blog(models.Model):
 
 
     def __str__(self):
-        return f'{self.message_heading} : {self.message_slug}'
+        return f'{self.message_heading} : {self.message_content}'
 
-    # ункция переопределения slug
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.message_heading)
+        super(Blog, self).save(*args, **kwargs)
+
+
+    # функция переопределения slug
     def get_absolute_url(self):
         return reverse('blog_item', kwargs={'slug': self.slug})  # new
 
